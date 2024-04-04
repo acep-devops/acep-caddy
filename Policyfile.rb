@@ -10,7 +10,9 @@ name 'acep-caddy'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'acep-caddy::default'
+run_list 'golang::default', 'acep-caddy::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'acep-caddy', path: '.'
+
+default['golang']['version'] = '1.22.1'

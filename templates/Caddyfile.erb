@@ -1,0 +1,15 @@
+{
+    email <%= @acme_email %>
+}
+
+<%= @proxy_domain %> {
+    tls {
+        dns googleclouddns {
+            gcp_project <%= @gcp_project %>
+            gcp_application_default <%= @gcp_service_account_file %>
+        }
+    }
+    <% @sites.each do |site| %>
+    <%= render 'site.erb', variables: site %>
+    <% end %>
+}
