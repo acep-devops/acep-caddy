@@ -1,8 +1,11 @@
 {
     email <%= @acme_email %>
+    servers {
+        metrics
+    }
 }
 
-<%= @proxy_domain %> {
+<%= @wildcard_domain %> {
     tls {
         dns googleclouddns {
             gcp_project <%= @gcp_project %>

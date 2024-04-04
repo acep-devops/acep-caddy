@@ -3,8 +3,8 @@
 # Recipe:: debian
 #
 # Copyright:: 2024, The Authors, All Rights Reserved.
-include_recipe 'golang::default'
 
+# If we are just using stock caddy then we could use the following
 # apt_repository 'caddy' do
 #     uri 'https://dl.cloudsmith.io/public/caddy/stable/deb/ubuntu'
 #     components ['main']
@@ -19,28 +19,43 @@ apt_repository 'xcaddy' do
     action :add
 end
 
+# Need to install golang in order to build the custom caddy binary
+include_recipe 'golang::default'
 package %w{xcaddy} do
     action :install
     notifies :run, 'execute[xcaddy_build]', :immediately
 end
 
+# We're building a custom binary for caddy that includes the googleclouddns
+# TODO: Create a resource for this
 execute 'xcaddy_build' do
     command '/usr/bin/bash -l -c "xcaddy build --with github.com/caddy-dns/googleclouddns --output /usr/bin/caddy"'
     action :nothing
 end
 
-group 'caddy' do
+######################
+# These items are not needed if we are using the stock caddy
+######################
+
+group node['caddy']['group'] do
     action :create
     system true
 end
 
-user 'caddy' do
-    group 'caddy'
+user node['caddy']['user'] do
+    group node['caddy']['group']
     manage_home true
     home '/var/lib/caddy'
     system true
     shell '/bin/false'
     action [:create, :manage]
+end
+
+directory '/etc/caddy' do
+    owner node['caddy']['user']
+    group node['caddy']['group']
+    mode '0755'
+    action :create
 end
 
 directory '/var/lib/caddy' do 
