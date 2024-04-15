@@ -1,0 +1,13 @@
+{
+    "id": "test_sites",
+    "wildcard_domain": "*.lab.alaska.edu",
+    "gcp_project": "clound-dns-321021",
+    "sites": [
+        {
+            "name": "test_site",
+            "upstream": "http://localhost:8080",
+            "fqdn": "test.camio.lab.alaska.edu",
+            "self_signed": false
+        }
+    ]
+}
