@@ -1,0 +1,52 @@
+---
+name: kitchen
+
+on:
+  pull_request:
+    paths-ignore:
+      - README.md
+
+jobs:
+  cookstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Install Chef
+        uses: actionshub/chef-install@2.0.4
+        with:
+          version: ${{ inputs.chef_workstation_version }}
+      - name: Run Cookstyle
+        run: chef exec cookstyle --display-cop-names --extra-details
+        env:
+          CHEF_LICENSE: accept-no-persist
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Run yaml Lint
+        uses: actionshub/yamllint@main
+  dokken:
+    runs-on: ubuntu-latest
+    needs: [cookstyle, yamllint]
+    strategy:
+      matrix:
+        os:
+          - ubuntu-2204
+        suite:
+          - "default"
+      fail-fast: false
+    steps:
+      - name: Check out code
+        uses: actions/checkout@main
+      - name: Install Chef
+        uses: actionshub/chef-install@2.0.4
+      - name: Test-Kitchen
+        uses: actionshub/test-kitchen@main
+        with:
+          suite: ${{ matrix.suite }}
+          os: ${{ matrix.os }}
+        env:
+          CHEF_LICENSE: accept-no-persist
+          KITCHEN_LOCAL_YAML: kitchen.dokken.yml
