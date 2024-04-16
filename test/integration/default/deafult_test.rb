@@ -17,3 +17,8 @@ describe port(443) do
   it { should be_listening }
   its('processes') {should include 'caddy'}
 end
+
+describe file('/etc/caddy/Caddyfile') do
+  it { should exist }
+  its('content') { should match /test-gcp-project/ }
+end

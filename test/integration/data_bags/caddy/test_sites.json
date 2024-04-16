@@ -1,7 +1,7 @@
 {
     "id": "test_sites",
     "wildcard_domain": "*.lab.alaska.edu",
-    "gcp_project": "clound-dns-321021",
+    "gcp_project": "test-gcp-project-name",
     "sites": [
         {
             "name": "test_site",
