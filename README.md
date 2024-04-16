@@ -18,6 +18,7 @@ When creating a service account in GCP you can create a service key `JSON` this 
 Set the correct attribute value for the cookbook to use in the nodes Policyfile
 
 ```ruby
+default['gcp']['project'] = "[GCP_PROJECT_NAME]"
 default['gcp']['service_account_vault'] = "[GCP_SECRET_VAULT_NAME]"
 ```
 
@@ -47,16 +48,14 @@ Example config for the sites data bag:
 ```
 {
     "id": "[NAME]_sites",
-    "wildcard_domain": "*.lab.alaska.edu",
-    "gcp_project": "clound-dns-321021",
-    "sites": [
-        {
+    "domains": {
+        "*.camio.lab.alaska.edu": [{
             "name": "test_site",
             "upstream": "http://localhost:8080",
             "fqdn": "test.camio.lab.alaska.edu",
             "self_signed": false
-        }
-    ]
+        }]
+    }
 }
 ```
 
