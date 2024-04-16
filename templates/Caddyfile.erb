@@ -5,14 +5,21 @@
     }
 }
 
-<%= @wildcard_domain %> {
+(tls-googledns) {
     tls {
         dns googleclouddns {
             gcp_project <%= @gcp_project %>
             gcp_application_default <%= @gcp_service_account_file %>
         }
     }
-    <% @sites.each do |site| %>
+}
+ 
+<%- @domains.each do |domain,sites| %>
+<%= domain %> {
+    log 
+    import tls-googledns
+    <% sites.each do |site| %>
     <%= render 'site.erb', variables: site %>
     <% end %>
 }
+<% end %>

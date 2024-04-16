@@ -30,10 +30,10 @@ template '/etc/caddy/Caddyfile' do
     group node['caddy']['group']
     mode '0700'
     variables acme_email: node['caddy']['acme_email'], 
-        wildcard_domain: caddy_config[:wildcard_domain],
-        gcp_project: caddy_config[:gcp_project],
-        gcp_service_account_file: node['gcp']['service_account_json'], 
-        sites: caddy_config[:sites]
+        domains: caddy_config[:domains],
+        gcp_project: node['gcp'][:project],
+        gcp_service_account_file: node['gcp']['service_account_json'] 
+
     action :create
     # notifies :run, 'execute[caddy_fmt]', :immediately
     notifies :restart, 'service[caddy]', :delayed
