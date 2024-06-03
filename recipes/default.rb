@@ -4,39 +4,31 @@
 #
 # Copyright:: 2024, The Authors, All Rights Reserved.
 
-if ubuntu_platform?
-    include_recipe 'acep-caddy::ubuntu'
+caddy_build 'caddy' do 
 end
 
-service 'caddy' do 
-    action :enable
+caddy_service 'caddy' do 
+    action [:install, :enable]
+    delayed_action :start
 end
 
-caddy_config = data_bag_item('caddy', node['caddy']['sites_data_bag'])
 gcp_json = chef_vault_item('credentials', node['gcp']['service_account_vault'])
 
-file node['gcp']['service_account_json'] do
-    content gcp_json["file-content"]
-    owner node['caddy']['user']
-    group node['caddy']['group']
-    mode '0700'
+caddy_config 'default' do 
+    acme_staging true
+    acme_email node['caddy']['acme_email']
+    gcp_project node['gcp']['project']
+    gcp_service_account_json gcp_json['file-content']
     action :create
-    notifies :restart, 'service[caddy]', :delayed
 end
 
-template '/etc/caddy/Caddyfile' do
-    source 'Caddyfile.erb'
-    owner node['caddy']['user']
-    group node['caddy']['group']
-    mode '0700'
-    variables acme_email: node['caddy']['acme_email'], 
-        domains: caddy_config[:domains],
-        gcp_project: node['gcp'][:project],
-        gcp_service_account_file: node['gcp']['service_account_json'] 
-
-    action :create
-    # notifies :run, 'execute[caddy_fmt]', :immediately
-    notifies :restart, 'service[caddy]', :delayed
+caddy_config 'hello.lab.acep.uaf.edu' do
+    domain '*.lab.acep.uaf.edu'
+    content <<-EOF
+encode gzip
+respond "Hello, World!"
+    EOF
+    action :add
 end
 
 # Take out fmt cause it will change the template config and cause chef

@@ -1,0 +1,38 @@
+{
+    email <%= @acme_email %>
+    <%- if @acme_staging %>
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    <%- end %>
+    servers {
+        metrics
+    }
+}
+
+(tls-googledns) {
+    tls {
+        dns googleclouddns {
+            gcp_project <%= @gcp_project %>
+            gcp_application_default <%= @gcp_service_account_file %>
+        }
+    }
+}
+
+(https-insecure) {
+    transport http {
+        tls 
+        tls_insecure_skip_verify
+    }
+}
+
+<%- @domains.each do |domain,sites| %>
+<%= domain %> {
+    import tls-googledns
+    <%- sites.each do |fqdn,content| %>
+    <%- site_name = fqdn.gsub('.', '_') %>
+    @<%= site_name %> host <%= fqdn %> 
+    handle @<%= site_name %> {
+        <%= content %>
+    }
+    <%- end %>
+}
+<% end %>

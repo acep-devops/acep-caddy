@@ -21,5 +21,9 @@
     <% sites.each do |site| %>
     <%= render 'site.erb', variables: site %>
     <% end %>
+    
+    handle {
+        abort
+    }
 }
 <% end %>
