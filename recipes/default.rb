@@ -12,24 +12,24 @@ caddy_service 'caddy' do
     delayed_action :start
 end
 
-gcp_json = chef_vault_item('credentials', node['gcp']['service_account_vault'])
+# gcp_json = chef_vault_item('credentials', node['gcp']['service_account_vault'])
 
-caddy_config 'default' do 
-    acme_staging true
-    acme_email node['caddy']['acme_email']
-    gcp_project node['gcp']['project']
-    gcp_service_account_json gcp_json['file-content']
-    action :create
-end
+# caddy_config 'default' do 
+#     acme_staging true
+#     acme_email node['caddy']['acme_email']
+#     gcp_project node['gcp']['project']
+#     gcp_service_account_json gcp_json['file-content']
+#     action :create
+# end
 
-caddy_config 'hello.lab.acep.uaf.edu' do
-    domain '*.lab.acep.uaf.edu'
-    content <<-EOF
-encode gzip
-respond "Hello, World!"
-    EOF
-    action :add
-end
+# caddy_config 'hello.lab.acep.uaf.edu' do
+#     domain '*.lab.acep.uaf.edu'
+#     content <<-EOF
+# encode gzip
+# respond "Hello, World!"
+#     EOF
+#     action :add
+# end
 
 # Take out fmt cause it will change the template config and cause chef
 # To always update the config and restart caddy service
