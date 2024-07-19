@@ -15,7 +15,7 @@ end
 
 describe port(443) do
   it { should be_listening }
-  its('processes') {should include 'caddy'}
+  its('processes') { should include 'caddy' }
 end
 
 describe file('/etc/caddy/Caddyfile') do
