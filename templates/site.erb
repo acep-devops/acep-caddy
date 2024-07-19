@@ -2,6 +2,9 @@
     handle @<%= @name %> {
         encode gzip
         reverse_proxy <%= @upstream %> {
+            <% if @host_header %>
+            header_up Host <%= @host_header %>
+            <% end %>
             <% if @self_signed %>
             transport http {
                 tls 

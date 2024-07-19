@@ -6,7 +6,8 @@
                 "name": "test_site",
                 "upstream": "http://localhost:8080",
                 "fqdn": "test.camio.lab.alaska.edu",
-                "self_signed": false
+                "self_signed": false,
+                "host_header": "localhost:8080"
             }
         ]
     }
