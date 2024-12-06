@@ -1,12 +1,12 @@
 @<%= @name %> host <%= @fqdn %> 
-    handle @<%= @name %> {
-        encode gzip
-        reverse_proxy <%= @upstream %> {
-            <% if @self_signed %>
-            transport http {
-                tls 
-                tls_insecure_skip_verify
-            }
-            <% end %>
+handle @<%= @name %> {
+    encode gzip
+    reverse_proxy <%= @upstream %> {
+        <% if @self_signed %>
+        transport http {
+            tls 
+            tls_insecure_skip_verify
         }
+        <% end %>
     }
+}

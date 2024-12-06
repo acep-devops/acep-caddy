@@ -1,14 +1,17 @@
 {
     email <%= @acme_email %>
     <%- if @acme_staging %>
-    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    acme_ca <%= @acme_staging_url %>
+    <%- end %>
+    <%- unless @acme_ca_root.nil? %>
+    acme_ca_root <%= @acme_ca_root %>
     <%- end %>
     servers {
         metrics
     }
 }
 
-(tls-googledns) {
+(tls-dns) {
     tls {
         dns googleclouddns {
             gcp_project <%= @gcp_project %>
@@ -26,7 +29,9 @@
 
 <%- @domains.each do |domain,sites| %>
 <%= domain %> {
-    import tls-googledns
+    <%- if @dns_verfication %>
+        import tls-dns
+    <%- end %>
     <%- sites.each do |fqdn,content| %>
     <%- site_name = fqdn.gsub('.', '_') %>
     @<%= site_name %> host <%= fqdn %> 
