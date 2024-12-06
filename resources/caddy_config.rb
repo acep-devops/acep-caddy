@@ -16,7 +16,7 @@ property :gzip, [true, false], default: true
 
 action :add do
   if new_resource.domain.nil?
-    new_resource.domain = new_resource.name 
+    new_resource.domain = new_resource.name
   end
 
   with_run_context :root do

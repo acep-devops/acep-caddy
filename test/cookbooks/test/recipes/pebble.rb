@@ -1,14 +1,14 @@
 include_recipe 'golang::default'
-execute 'go install github.com/jsha/minica@latest' do 
-  env "PATH" => "/usr/local/go/bin:#{ENV['PATH']}"
+execute 'go install github.com/jsha/minica@latest' do
+  env 'PATH' => "/usr/local/go/bin:#{ENV['PATH']}"
 end
 
 docker_installation 'default'
-docker_service 'default' do 
+docker_service 'default' do
   action [:create, :start]
 end
 
-directory '/etc/pebble' do 
+directory '/etc/pebble' do
   action :create
 end
 
@@ -18,7 +18,7 @@ end
 
 execute 'minica -ca-cert pebble.minica.pem -ca-key pebble.minica.key.pem -domains localhost,pebble -ip-addresses 127.0.0.1' do
   cwd '/etc/pebble/certs'
-  env "PATH" => "~/go/bin:#{ENV['PATH']}"
+  env 'PATH' => "~/go/bin:#{ENV['PATH']}"
   not_if { ::File.exist?('/etc/pebble/certs/localhost/cert.pem') }
   action :run
 end
@@ -64,16 +64,16 @@ docker_container 'pebble' do
   tag 'latest'
   port [
     '14000:14000',
-    '15000:15000'
+    '15000:15000',
   ]
   command '-config /test/config.json'
   volumes [
-    '/etc/pebble:/test'
+    '/etc/pebble:/test',
   ]
 
   env [
-    "PEBBLE_VA_NOSLEEP=1",
-    "PEBBLE_VA_ALWAYS_VALID=1"
+    'PEBBLE_VA_NOSLEEP=1',
+    'PEBBLE_VA_ALWAYS_VALID=1',
   ]
 
   action :run

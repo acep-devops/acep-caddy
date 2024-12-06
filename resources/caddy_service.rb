@@ -57,8 +57,8 @@ action :install do
 
   with_run_context :root do
     service 'caddy' do
-        supports status: true, restart: true, reload: true
-        action :nothing
+      supports status: true, restart: true, reload: true
+      action :nothing
     end
 
     template '/etc/caddy/Caddyfile' do
