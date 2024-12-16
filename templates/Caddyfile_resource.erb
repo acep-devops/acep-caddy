@@ -1,0 +1,43 @@
+{
+    email <%= @acme_email %>
+    <%- if @acme_staging %>
+    acme_ca <%= @acme_staging_url %>
+    <%- end %>
+    <%- unless @acme_ca_root.nil? %>
+    acme_ca_root <%= @acme_ca_root %>
+    <%- end %>
+    servers {
+        metrics
+    }
+}
+
+(tls-dns) {
+    tls {
+        dns googleclouddns {
+            gcp_project <%= @gcp_project %>
+            gcp_application_default <%= @gcp_service_account_file %>
+        }
+    }
+}
+
+(https-insecure) {
+    transport http {
+        tls 
+        tls_insecure_skip_verify
+    }
+}
+
+<%- @domains.each do |domain,sites| %>
+<%= domain %> {
+    <%- if @dns_verfication %>
+        import tls-dns
+    <%- end %>
+    <%- sites.each do |fqdn,content| %>
+    <%- site_name = fqdn.gsub('.', '_') %>
+    @<%= site_name %> host <%= fqdn %> 
+    handle @<%= site_name %> {
+        <%= content %>
+    }
+    <%- end %>
+}
+<% end %>

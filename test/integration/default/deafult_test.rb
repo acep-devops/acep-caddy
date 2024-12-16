@@ -15,10 +15,14 @@ end
 
 describe port(443) do
   it { should be_listening }
-  its('processes') {should include 'caddy'}
+  its('processes') { should include 'caddy' }
 end
 
 describe file('/etc/caddy/Caddyfile') do
   it { should exist }
-  its('content') { should match /test-gcp-project/ }
+  its('content') { should match /@hello_lab_acep_uaf_edu/ }
+end
+
+describe command('sleep 5 && curl https://hello.lab.acep.uaf.edu --connect-to hello.lab.acep.uaf.edu:443:127.0.0.1 -k') do
+  its('stdout') { should match /Hello, World!/ }
 end

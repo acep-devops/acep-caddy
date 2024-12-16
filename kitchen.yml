@@ -31,6 +31,5 @@ suites:
         project: clound-dns-321021
       caddy:
         sites_data_bag: test_sites
-    verifier:
-      inspec_tests:
-        - test/integration/default
+    provisioner:
+      policyfile: ./policies/default.rb
