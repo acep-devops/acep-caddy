@@ -69,6 +69,7 @@ action :install do
       mode '0700'
       variables({
           domains: {},
+          snippets: {},
           acme_email: new_resource.acme_email,
           acme_staging: new_resource.acme_staging,
           acme_staging_url: new_resource.acme_staging_url,

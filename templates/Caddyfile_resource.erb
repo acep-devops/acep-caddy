@@ -27,6 +27,12 @@
     }
 }
 
+<%- @snippets.each do |name,content| %>
+(<%= name %>) {
+    <%= content %>
+}
+<%- end %>
+
 <%- @domains.each do |domain,sites| %>
 <%= domain %> {
     <%- if @dns_verfication %>

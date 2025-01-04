@@ -36,28 +36,17 @@ knife vault create credentials [GCP_SECRET_VAULT_NAME] -m client -S "tags:cloudd
 ```
 
 
-## Configs
+## Resources
 
-You can control which data bag is used for the caddy config by specifying the following attribute:
+* caddy_build
+* caddy_config
+* caddy_service
+* caddy_snippet
 
-```ruby
-default['caddy']['sites_data_bag'] = '[NAME]_sites'
-```
+* TODO: Add documentation for resources
+* Check the test cookbook `test/cookbooks/test` for examples on how to use the resources
 
-Example config for the sites data bag:
-```
-{
-    "id": "[NAME]_sites",
-    "domains": {
-        "*.camio.lab.alaska.edu": [{
-            "name": "test_site",
-            "upstream": "http://localhost:8080",
-            "fqdn": "test.camio.lab.alaska.edu",
-            "self_signed": false
-        }]
-    }
-}
-```
+
 
 * `wildcard_domain` - This is the domain that will be used to request a wildcard ssl certificate. Currently this cookbook assumes it's hosted in GCP CloudDomain and will need the appropriate credentials in order to set `txt` records for Let's Encrypt.
 * `gcp_project` - the GCP project hosting the wildcard domain

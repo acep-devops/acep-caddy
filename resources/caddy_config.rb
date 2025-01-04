@@ -14,9 +14,34 @@ property :reverse_proxy, Hash
 property :redirect, String
 property :gzip, [true, false], default: true
 
+action_class do
+  include AcepCaddy::CaddyHelpers
+end
+
 action :add do
   if new_resource.domain.nil?
     new_resource.domain = new_resource.name
+  end
+
+  site = []
+  unless new_resource.content.nil?
+    site << new_resource.content
+  end
+
+  site << encode_gzip(new_resource.gzip)
+
+  unless new_resource.redirect.nil?
+    site << "redir #{new_resource.redirect}"
+  end
+
+  unless new_resource.reverse_proxy.nil?
+    new_resource.reverse_proxy[:with] ||= []
+
+    if new_resource.reverse_proxy[:skip_verify]
+      new_resource.reverse_proxy[:with] << 'https-insecure'
+    end
+
+    site << reverse_proxy(new_resource.reverse_proxy)
   end
 
   with_run_context :root do
@@ -24,25 +49,6 @@ action :add do
       variables[:dns_verify] = new_resource.domain.include? '*'
       variables[:domains] ||= {}
       variables[:domains][new_resource.domain] ||= {}
-
-      site = []
-      unless new_resource.content.nil?
-        site << new_resource.content
-      end
-
-      site << 'encode gzip' if new_resource.gzip
-
-      unless new_resource.reverse_proxy.nil?
-        site << <<-EOF
-        reverse_proxy #{new_resource.reverse_proxy[:to]} {
-          #{new_resource.reverse_proxy[:skip_verify] ? 'import https-insecure' : ''}
-        }
-        EOF
-      end
-
-      unless new_resource.redirect.nil?
-        site << "redir #{new_resource.redirect}"
-      end
       variables[:domains][new_resource.domain][new_resource.fqdn] = site.join("\n")
     end
   end
