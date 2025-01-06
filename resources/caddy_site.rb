@@ -4,9 +4,6 @@ unified_mode true
 provides :caddy_config
 provides :caddy_site
 
-property :user, String, default: 'caddy'
-property :group, String, default: 'caddy'
-
 # related to add actions
 property :domain, String
 property :fqdn, String, required: true
