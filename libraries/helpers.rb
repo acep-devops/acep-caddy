@@ -23,7 +23,7 @@ module AcepCaddy
     end
 
     def site_match(name, resource)
-      match_data = resource.match.to_a 
+      match_data = resource.match.to_a
       match_data << "host #{resource.fqdn}" unless resource.fqdn.nil?
 
       <<-EOF
@@ -35,7 +35,7 @@ module AcepCaddy
 
     def site(resource)
       content = []
-      
+
       content << encode_gzip(resource.gzip)
       unless resource.content.nil?
         content << resource.content

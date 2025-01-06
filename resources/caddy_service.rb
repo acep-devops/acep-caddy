@@ -73,7 +73,7 @@ action :install do
           acme_email: new_resource.acme_email,
           acme_staging: new_resource.acme_staging,
           acme_staging_url: new_resource.acme_staging_url,
-          acme_ca_root: new_resource.acme_ca_root
+          acme_ca_root: new_resource.acme_ca_root,
       })
       action :nothing
       delayed_action :create

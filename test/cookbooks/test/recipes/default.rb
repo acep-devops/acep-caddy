@@ -48,7 +48,7 @@ caddy_site 'test' do
   action :add
 end
 
-caddy_site 'psi' do 
+caddy_site 'psi' do
   fqdn 'psi.lab.acep.uaf.edu'
   redirect 'https://www.uaf.edu/acep/research/power-systems-integration.php'
   action :add

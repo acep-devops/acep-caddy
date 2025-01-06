@@ -21,7 +21,7 @@ action :add do
   if new_resource.domain.nil?
     new_resource.domain = new_resource.fqdn
   end
-  
+
   content = site(new_resource)
 
   with_run_context :root do
