@@ -11,22 +11,6 @@
     }
 }
 
-(tls-dns) {
-    tls {
-        dns googleclouddns {
-            gcp_project <%= @gcp_project %>
-            gcp_application_default <%= @gcp_service_account_file %>
-        }
-    }
-}
-
-(https-insecure) {
-    transport http {
-        tls 
-        tls_insecure_skip_verify
-    }
-}
-
 <%- @snippets.each do |name,content| %>
 (<%= name %>) {
     <%= content %>
@@ -39,11 +23,7 @@
         import tls-dns
     <%- end %>
     <%- sites.each do |fqdn,content| %>
-    <%- site_name = fqdn.gsub('.', '_') %>
-    @<%= site_name %> host <%= fqdn %> 
-    handle @<%= site_name %> {
-        <%= content %>
-    }
+    <%= content %>
     <%- end %>
 }
 <% end %>

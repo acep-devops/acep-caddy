@@ -38,20 +38,10 @@ knife vault create credentials [GCP_SECRET_VAULT_NAME] -m client -S "tags:cloudd
 
 ## Resources
 
-* caddy_build
-* caddy_config
-* caddy_service
-* caddy_snippet
+Check the [test cookbook](test/cookbooks/test) for examples on how to use the resources
 
-* TODO: Add documentation for resources
-* Check the test cookbook `test/cookbooks/test` for examples on how to use the resources
+* [caddy_build](docs/caddy_build.md)
+* [caddy_site](docs/caddy_site.md)
+* [caddy_service](docs/caddy_service.md)
+* [caddy_snippet](docs/caddy_snippet.md)
 
-
-
-* `wildcard_domain` - This is the domain that will be used to request a wildcard ssl certificate. Currently this cookbook assumes it's hosted in GCP CloudDomain and will need the appropriate credentials in order to set `txt` records for Let's Encrypt.
-* `gcp_project` - the GCP project hosting the wildcard domain
-* `sites` - An array of site configs that the caddy instance will proxy.
-    * `name` - Unique name for the reverse proxy site
-    * `upstream` - URL for the remote site to proxy
-    * `fqdn` - The url that will be used for the proxy to the remote site. Must be covered by the wildcard host or cause SSL errors
-    * `self_signed` - If the remote site for the proxy uses a self-signed proxy then this must be set to `true` in order to allow caddy to trust the remote site. Otherwise this should be `false` if using a real SSL certificate or is not using SSL.

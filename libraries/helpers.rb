@@ -21,6 +21,43 @@ module AcepCaddy
     def encode_gzip(enabled)
       'encode gzip' if enabled
     end
+
+    def site_match(name, resource)
+      match_data = resource.match.to_a 
+      match_data << "host #{resource.fqdn}" unless resource.fqdn.nil?
+
+      <<-EOF
+@#{name} {
+  #{match_data.join("\n")}
+}
+      EOF
+    end
+
+    def site(resource)
+      content = []
+      
+      content << encode_gzip(resource.gzip)
+      unless resource.content.nil?
+        content << resource.content
+      end
+
+      unless resource.reverse_proxy.nil?
+        resource.reverse_proxy[:with] ||= []
+        resource.reverse_proxy[:with] << 'https-insecure' if resource.reverse_proxy[:skip_verify]
+        content << reverse_proxy(resource.reverse_proxy)
+      end
+
+      unless resource.redirect.nil?
+        content << "redir #{resource.redirect}"
+      end
+
+      <<-EOF
+#{site_match(resource.name, resource)}
+handle @#{resource.name} {
+  #{content.join("\n")}
+}
+      EOF
+    end
   end
 end
 
