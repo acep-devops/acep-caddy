@@ -1,6 +1,6 @@
 name 'test'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Will Fisher'
+maintainer_email 'whfisher@alaska.edu'
 license 'All Rights Reserved'
 description 'Installs/Configures test'
 version '0.1.0'

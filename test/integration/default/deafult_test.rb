@@ -20,9 +20,18 @@ end
 
 describe file('/etc/caddy/Caddyfile') do
   it { should exist }
-  its('content') { should match /@hello_lab_acep_uaf_edu/ }
+  its('content') { should match /@hello {/ }
+end
+
+describe file('/etc/caddy/Caddyfile') do
+  it { should exist }
+  its('content') { should match /import https-insecure/ }
 end
 
 describe command('sleep 5 && curl https://hello.lab.acep.uaf.edu --connect-to hello.lab.acep.uaf.edu:443:127.0.0.1 -k') do
-  its('stdout') { should match /Hello, World!/ }
+  its('stdout') { should match /Hello World!/ }
+end
+
+describe command('curl https://hello.lab.acep.uaf.edu/test --connect-to hello.lab.acep.uaf.edu:443:127.0.0.1 -k') do
+  its('stdout') { should match /Hello test!/ }
 end

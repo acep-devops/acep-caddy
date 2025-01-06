@@ -1,5 +1,5 @@
 {
-  "revision_id": "d41cd45ecef2b1c3c62cf398dc2d3c7d0594d4a0610e26264499b9c958b203c9",
+  "revision_id": "764da0509c65260219ca249e1dd3e61e069e1610477ee2b156c335ef909ca341",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]"
@@ -9,19 +9,19 @@
   ],
   "cookbook_locks": {
     "acep-caddy": {
-      "version": "0.1.0",
-      "identifier": "85bf653b23ec24b87214db65305f91711a60822a",
-      "dotted_decimal_identifier": "37646613407329316.51916829620514911.159914959864362",
+      "version": "2.0.0",
+      "identifier": "5e0d94391ed748fd0c8acf76eca33b06bc3e1220",
+      "dotted_decimal_identifier": "26473578075445064.71226959433493667.64900114027040",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d31d2f1bf4f05a11df106c5420efdf8ba3d46549",
+        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/will/convert_to_resources"
         ]
       },
       "source_options": {
@@ -40,14 +40,14 @@
       }
     },
     "docker": {
-      "version": "11.6.0",
-      "identifier": "a7ba667cfe10b68ed2f44b524bf0c28411478ea9",
-      "dotted_decimal_identifier": "47211270457135286.40201393370450928.213872481373865",
-      "cache_key": "docker-11.6.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.6.0/download",
+      "version": "11.8.4",
+      "identifier": "b5108c407450d1242c1d89dfa851916cfc5f9c01",
+      "dotted_decimal_identifier": "50965165347459281.10181604540393553.159897276619777",
+      "cache_key": "docker-11.8.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.8.4/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.6.0/download",
-        "version": "11.6.0"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.8.4/download",
+        "version": "11.8.4"
       }
     },
     "golang": {
@@ -74,18 +74,18 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "d6adfcb51a6f0e6c2dbd9f6bae3d541ae6bc03f6",
-      "dotted_decimal_identifier": "60426945897852686.30449589931454013.92474516964342",
+      "identifier": "9e51d5cd2be900560dca76c33046a84f78188a97",
+      "dotted_decimal_identifier": "44563025032374528.24222011224174662.185059270757015",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d31d2f1bf4f05a11df106c5420efdf8ba3d46549",
+        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/will/convert_to_resources"
         ]
       },
       "source_options": {
@@ -113,7 +113,7 @@
       ],
       [
         "docker",
-        "= 11.6.0"
+        "= 11.8.4"
       ],
       [
         "golang",
@@ -129,7 +129,7 @@
       ]
     ],
     "dependencies": {
-      "acep-caddy (0.1.0)": [
+      "acep-caddy (2.0.0)": [
         [
           "golang",
           ">= 0.0.0"
@@ -141,7 +141,7 @@
           ">= 3.1.0"
         ]
       ],
-      "docker (11.6.0)": [
+      "docker (11.8.4)": [
 
       ],
       "golang (5.4.21)": [

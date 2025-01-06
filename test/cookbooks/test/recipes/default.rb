@@ -25,25 +25,38 @@ caddy_service 'caddy' do
   action [:install, :enable, :start]
 end
 
-caddy_config 'hello.lab.acep.uaf.edu' do
+caddy_site 'hello_test' do
+  fqdn 'hello.lab.acep.uaf.edu'
+  match ['path /test']
   content <<-EOF
-respond "Hello, World!"
+respond "Hello test!"
     EOF
   action :add
 end
 
-caddy_config 'test.lab.acep.uaf.edu' do
+caddy_site 'hello' do
+  fqdn 'hello.lab.acep.uaf.edu'
+  content <<-EOF
+respond "Hello World!"
+    EOF
+  action :add
+end
+
+caddy_site 'test' do
+  fqdn 'test.lab.acep.uaf.edu'
   reverse_proxy to: 'localhost:8080', skip_verify: true
   action :add
 end
 
-caddy_config 'psi.lab.acep.uaf.edu' do
+caddy_site 'psi' do
+  fqdn 'psi.lab.acep.uaf.edu'
   redirect 'https://www.uaf.edu/acep/research/power-systems-integration.php'
   action :add
 end
 
-caddy_config 'foo.camio.acep.uaf.edu' do
+caddy_site 'foo' do
   domain '*.camio.acep.uaf.edu'
+  fqdn 'foo.camio.acep.uaf.edu'
   content <<-EOF
     respond "Hello, Camio!"
   EOF

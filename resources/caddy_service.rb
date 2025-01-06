@@ -69,17 +69,36 @@ action :install do
       mode '0700'
       variables({
           domains: {},
+          snippets: {},
           acme_email: new_resource.acme_email,
           acme_staging: new_resource.acme_staging,
           acme_staging_url: new_resource.acme_staging_url,
           acme_ca_root: new_resource.acme_ca_root,
-          gcp_project: new_resource.gcp_project,
-          gcp_service_account_file: gcp_service_account_file,
       })
       action :nothing
       delayed_action :create
       notifies :restart, 'service[caddy]', :delayed
     end
+  end
+
+  caddy_snippet 'https-insecure' do
+    content <<-EOF
+    transport http {
+      tls
+      tls_insecure_skip_verify
+    }
+    EOF
+  end
+
+  caddy_snippet 'tls-dns' do
+    content <<-EOF
+    tls {
+        dns googleclouddns {
+            gcp_project #{new_resource.gcp_project}
+            gcp_application_default #{gcp_service_account_file}
+        }
+    }
+    EOF
   end
 
   systemd_unit 'caddy.service' do

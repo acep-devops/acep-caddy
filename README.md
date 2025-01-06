@@ -36,33 +36,12 @@ knife vault create credentials [GCP_SECRET_VAULT_NAME] -m client -S "tags:cloudd
 ```
 
 
-## Configs
+## Resources
 
-You can control which data bag is used for the caddy config by specifying the following attribute:
+Check the [test cookbook](test/cookbooks/test) for examples on how to use the resources
 
-```ruby
-default['caddy']['sites_data_bag'] = '[NAME]_sites'
-```
+* [caddy_build](docs/caddy_build.md)
+* [caddy_site](docs/caddy_site.md)
+* [caddy_service](docs/caddy_service.md)
+* [caddy_snippet](docs/caddy_snippet.md)
 
-Example config for the sites data bag:
-```
-{
-    "id": "[NAME]_sites",
-    "domains": {
-        "*.camio.lab.alaska.edu": [{
-            "name": "test_site",
-            "upstream": "http://localhost:8080",
-            "fqdn": "test.camio.lab.alaska.edu",
-            "self_signed": false
-        }]
-    }
-}
-```
-
-* `wildcard_domain` - This is the domain that will be used to request a wildcard ssl certificate. Currently this cookbook assumes it's hosted in GCP CloudDomain and will need the appropriate credentials in order to set `txt` records for Let's Encrypt.
-* `gcp_project` - the GCP project hosting the wildcard domain
-* `sites` - An array of site configs that the caddy instance will proxy.
-    * `name` - Unique name for the reverse proxy site
-    * `upstream` - URL for the remote site to proxy
-    * `fqdn` - The url that will be used for the proxy to the remote site. Must be covered by the wildcard host or cause SSL errors
-    * `self_signed` - If the remote site for the proxy uses a self-signed proxy then this must be set to `true` in order to allow caddy to trust the remote site. Otherwise this should be `false` if using a real SSL certificate or is not using SSL.
