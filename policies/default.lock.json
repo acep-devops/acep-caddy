@@ -1,5 +1,5 @@
 {
-  "revision_id": "86320506dac00f0dfe728038c9e32c59e6855ef616b8f9fbbe21721e63a42a86",
+  "revision_id": "fff54f29081b87425a96d051d5bfe98ee27d2e806c3b38325dedf7a2f0ca6650",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -10,19 +10,19 @@
   ],
   "cookbook_locks": {
     "acep-caddy": {
-      "version": "2.0.0",
-      "identifier": "efcc90a6da90696c3bf6f9bb4393e32a3098b614",
-      "dotted_decimal_identifier": "67497441080545385.30465229422543763.249770343446036",
+      "version": "2.1.0",
+      "identifier": "f63d18e48aa31b0121956ed2539d5da9e159ea86",
+      "dotted_decimal_identifier": "69310021393621787.318400669832093.102984211622534",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "470682d71510cf15f4013cd9c2a45f97e9c7c216",
+        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/will/cleanup_resource_revamp"
         ]
       },
       "source_options": {
@@ -75,18 +75,18 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "9c00800396766f13f7ff5e05b0218bb5414f418a",
-      "dotted_decimal_identifier": "43910646182868591.5620700723654689.153610601054602",
+      "identifier": "40a11fa1f66455341c7b7b19e8aab7e0e4fabae1",
+      "dotted_decimal_identifier": "18191555742819413.14668015460804778.202176542194401",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "470682d71510cf15f4013cd9c2a45f97e9c7c216",
+        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/will/cleanup_resource_revamp"
         ]
       },
       "source_options": {
@@ -130,7 +130,7 @@
       ]
     ],
     "dependencies": {
-      "acep-caddy (2.0.0)": [
+      "acep-caddy (2.1.0)": [
         [
           "golang",
           ">= 0.0.0"

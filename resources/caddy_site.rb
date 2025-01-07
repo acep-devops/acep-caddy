@@ -15,7 +15,7 @@ action :add do
     edit_resource(:template, '/etc/caddy/Caddyfile') do |new_resource|
       variables[:domains] ||= {}
       variables[:domains][new_resource.name] ||= { content: [], sites: {} }
-      variables[:domains][new_resource.name][:content] += new_resource.extras
+      variables[:domains][new_resource.name][:content] += new_resource.content
       variables[:domains][new_resource.name][:content].uniq!
     end
   end
