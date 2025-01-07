@@ -21,8 +21,8 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-20.04
-  - name: centos-8
+  - name: ubuntu-22.04
+  - name: ubuntu-24.04
 
 suites:
   - name: default
@@ -31,5 +31,7 @@ suites:
         project: clound-dns-321021
       caddy:
         sites_data_bag: test_sites
+      chef-vault:
+        databag_fallback: true
     provisioner:
       policyfile: ./policies/default.rb

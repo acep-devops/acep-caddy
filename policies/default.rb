@@ -10,7 +10,7 @@ name 'acep-caddy'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'test::default'
+run_list 'test::default', 'acep-caddy::acep'
 
 # Specify a custom source for a single cookbook:
 cookbook 'acep-caddy', path: '..'

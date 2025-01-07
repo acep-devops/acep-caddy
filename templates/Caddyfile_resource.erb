@@ -17,12 +17,10 @@
 }
 <%- end %>
 
-<%- @domains.each do |domain,sites| %>
+<%- @domains.each do |domain,config| %>
 <%= domain %> {
-    <%- if @dns_verfication %>
-        import tls-dns
-    <%- end %>
-    <%- sites.each do |fqdn,content| %>
+    <%= config[:content].join("\n") %>
+    <%- config[:sites].each do |fqdn,content| %>
     <%= content %>
     <%- end %>
 }

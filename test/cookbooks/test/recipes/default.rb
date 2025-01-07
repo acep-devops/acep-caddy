@@ -13,19 +13,15 @@ file '/etc/ssl/certs/pebble.minica.pem' do
   mode '0644'
 end
 
-gcp_json = chef_vault_item('credentials', node['gcp']['service_account_vault'])
 caddy_service 'caddy' do
   acme_staging true
   acme_staging_url 'https://localhost:14000/dir'
   acme_ca_root '/etc/ssl/certs/pebble.minica.pem'
-  acme_email node['caddy']['acme_email']
-  gcp_project node['gcp']['project']
-  gcp_service_account_json gcp_json['file-content']
-
+  acme_email 'test@test.com'
   action [:install, :enable, :start]
 end
 
-caddy_site 'hello_test' do
+caddy_handler 'hello_test' do
   fqdn 'hello.lab.acep.uaf.edu'
   match ['path /test']
   content <<-EOF
@@ -34,7 +30,7 @@ respond "Hello test!"
   action :add
 end
 
-caddy_site 'hello' do
+caddy_handler 'hello' do
   fqdn 'hello.lab.acep.uaf.edu'
   content <<-EOF
 respond "Hello World!"
@@ -42,19 +38,21 @@ respond "Hello World!"
   action :add
 end
 
-caddy_site 'test' do
-  fqdn 'test.lab.acep.uaf.edu'
-  reverse_proxy to: 'localhost:8080', skip_verify: true
+caddy_handler 'test.lab.acep.uaf.edu' do
+  reverse_proxy to: 'localhost:9443', with: ['https-insecure']
   action :add
 end
 
-caddy_site 'psi' do
-  fqdn 'psi.lab.acep.uaf.edu'
+caddy_handler 'psi.lab.acep.uaf.edu' do
   redirect 'https://www.uaf.edu/acep/research/power-systems-integration.php'
   action :add
 end
 
-caddy_site 'foo' do
+caddy_site '*.camio.acep.uaf.edu' do
+  dns_verification 'tls-dns'
+end
+
+caddy_handler 'foo' do
   domain '*.camio.acep.uaf.edu'
   fqdn 'foo.camio.acep.uaf.edu'
   content <<-EOF

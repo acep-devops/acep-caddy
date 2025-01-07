@@ -1,27 +1,28 @@
 {
-  "revision_id": "764da0509c65260219ca249e1dd3e61e069e1610477ee2b156c335ef909ca341",
+  "revision_id": "fff54f29081b87425a96d051d5bfe98ee27d2e806c3b38325dedf7a2f0ca6650",
   "name": "acep-caddy",
   "run_list": [
-    "recipe[test::default]"
+    "recipe[test::default]",
+    "recipe[acep-caddy::acep]"
   ],
   "included_policy_locks": [
 
   ],
   "cookbook_locks": {
     "acep-caddy": {
-      "version": "2.0.0",
-      "identifier": "5e0d94391ed748fd0c8acf76eca33b06bc3e1220",
-      "dotted_decimal_identifier": "26473578075445064.71226959433493667.64900114027040",
+      "version": "2.1.0",
+      "identifier": "f63d18e48aa31b0121956ed2539d5da9e159ea86",
+      "dotted_decimal_identifier": "69310021393621787.318400669832093.102984211622534",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
+        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/convert_to_resources"
+          "origin/will/cleanup_resource_revamp"
         ]
       },
       "source_options": {
@@ -74,18 +75,18 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "9e51d5cd2be900560dca76c33046a84f78188a97",
-      "dotted_decimal_identifier": "44563025032374528.24222011224174662.185059270757015",
+      "identifier": "40a11fa1f66455341c7b7b19e8aab7e0e4fabae1",
+      "dotted_decimal_identifier": "18191555742819413.14668015460804778.202176542194401",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
+        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/convert_to_resources"
+          "origin/will/cleanup_resource_revamp"
         ]
       },
       "source_options": {
@@ -129,7 +130,7 @@
       ]
     ],
     "dependencies": {
-      "acep-caddy (2.0.0)": [
+      "acep-caddy (2.1.0)": [
         [
           "golang",
           ">= 0.0.0"

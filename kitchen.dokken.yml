@@ -21,3 +21,6 @@ platforms:
   - name: ubuntu-22.04
     driver:
       image: dokken/ubuntu-22.04
+  - name: ubuntu-24.04
+    driver:
+      image: dokken/ubuntu-24.04
