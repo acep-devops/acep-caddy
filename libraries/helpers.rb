@@ -36,6 +36,8 @@ module AcepCaddy
     def site(resource)
       content = []
 
+      name = resource.name.gsub('.', '_')
+
       content << encode_gzip(resource.gzip)
       unless resource.content.nil?
         content << resource.content
@@ -52,8 +54,8 @@ module AcepCaddy
       end
 
       <<-EOF
-#{site_match(resource.name, resource)}
-handle @#{resource.name} {
+#{site_match(name, resource)}
+handle @#{name} {
   #{content.join("\n")}
 }
       EOF

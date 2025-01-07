@@ -44,17 +44,6 @@ action :install do
     action :create
   end
 
-  gcp_service_account_file = '/etc/caddy/gcp_service_account.json'
-
-  file gcp_service_account_file do
-    content new_resource.gcp_service_account_json
-    owner new_resource.user
-    group new_resource.group
-    mode '0700'
-    action :create
-    notifies :reload, 'service[caddy]', :delayed
-  end
-
   with_run_context :root do
     service 'caddy' do
       supports status: true, restart: true, reload: true
@@ -86,17 +75,6 @@ action :install do
     transport http {
       tls
       tls_insecure_skip_verify
-    }
-    EOF
-  end
-
-  caddy_snippet 'tls-dns' do
-    content <<-EOF
-    tls {
-        dns googleclouddns {
-            gcp_project #{new_resource.gcp_project}
-            gcp_application_default #{gcp_service_account_file}
-        }
     }
     EOF
   end

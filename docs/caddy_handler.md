@@ -1,7 +1,6 @@
-## caddy_site
+## caddy_handler
 
-Site configuration accumulator, 
-
+Site handler configuration accumulator, 
 
 ## Properties
 

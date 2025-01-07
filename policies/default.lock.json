@@ -1,8 +1,9 @@
 {
-  "revision_id": "764da0509c65260219ca249e1dd3e61e069e1610477ee2b156c335ef909ca341",
+  "revision_id": "daa39c27de7cfd941b1fe32b3f700dbe82e3600edaaa5c810c2f80bbd1d844ac",
   "name": "acep-caddy",
   "run_list": [
-    "recipe[test::default]"
+    "recipe[test::default]",
+    "recipe[acep-caddy::acep]"
   ],
   "included_policy_locks": [
 
@@ -10,14 +11,14 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.0.0",
-      "identifier": "5e0d94391ed748fd0c8acf76eca33b06bc3e1220",
-      "dotted_decimal_identifier": "26473578075445064.71226959433493667.64900114027040",
+      "identifier": "7f11d7f7b132543de2c3c4d290fdedb7ec16b47c",
+      "dotted_decimal_identifier": "35766941313479252.17419304027984125.261374195709052",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
+        "revision": "e8f2df95125a48739426b37f3d2d583b870ab80d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -74,14 +75,14 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "9e51d5cd2be900560dca76c33046a84f78188a97",
-      "dotted_decimal_identifier": "44563025032374528.24222011224174662.185059270757015",
+      "identifier": "9c00800396766f13f7ff5e05b0218bb5414f418a",
+      "dotted_decimal_identifier": "43910646182868591.5620700723654689.153610601054602",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "d626c63f167eb9b5b1b94fc5f6ad697a785f6d9d",
+        "revision": "e8f2df95125a48739426b37f3d2d583b870ab80d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
