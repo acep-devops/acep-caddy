@@ -5,18 +5,18 @@ provides :caddy_site
 
 # related to add actions
 property :dns_verification, String
-property :extras, Array, default: []
+property :content, Array, default: []
 
 action :add do
   import_verify = "import #{new_resource.dns_verification}"
-  new_resource.extras << import_verify
+  new_resource.content << import_verify
 
   with_run_context :root do
     edit_resource(:template, '/etc/caddy/Caddyfile') do |new_resource|
       variables[:domains] ||= {}
-      variables[:domains][new_resource.name] ||= { extras: [], sites: {} }
-      variables[:domains][new_resource.name][:extras] += new_resource.extras
-      variables[:domains][new_resource.name][:extras].uniq!
+      variables[:domains][new_resource.name] ||= { content: [], sites: {} }
+      variables[:domains][new_resource.name][:content] += new_resource.extras
+      variables[:domains][new_resource.name][:content].uniq!
     end
   end
 end

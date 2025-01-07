@@ -1,5 +1,5 @@
 {
-  "revision_id": "daa39c27de7cfd941b1fe32b3f700dbe82e3600edaaa5c810c2f80bbd1d844ac",
+  "revision_id": "86320506dac00f0dfe728038c9e32c59e6855ef616b8f9fbbe21721e63a42a86",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.0.0",
-      "identifier": "7f11d7f7b132543de2c3c4d290fdedb7ec16b47c",
-      "dotted_decimal_identifier": "35766941313479252.17419304027984125.261374195709052",
+      "identifier": "efcc90a6da90696c3bf6f9bb4393e32a3098b614",
+      "dotted_decimal_identifier": "67497441080545385.30465229422543763.249770343446036",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "e8f2df95125a48739426b37f3d2d583b870ab80d",
+        "revision": "470682d71510cf15f4013cd9c2a45f97e9c7c216",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/will/convert_to_resources"
+
         ]
       },
       "source_options": {
@@ -82,11 +82,11 @@
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "e8f2df95125a48739426b37f3d2d583b870ab80d",
+        "revision": "470682d71510cf15f4013cd9c2a45f97e9c7c216",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/will/convert_to_resources"
+
         ]
       },
       "source_options": {

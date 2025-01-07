@@ -31,7 +31,7 @@ action :add do
   with_run_context :root do
     edit_resource(:template, '/etc/caddy/Caddyfile') do |new_resource|
       variables[:domains] ||= {}
-      variables[:domains][new_resource.domain] ||= { extras: [], sites: {} }
+      variables[:domains][new_resource.domain] ||= { content: [], sites: {} }
       variables[:domains][new_resource.domain][:sites][new_resource.name] = content
     end
   end

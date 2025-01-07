@@ -19,7 +19,7 @@
 
 <%- @domains.each do |domain,config| %>
 <%= domain %> {
-    <%= config[:extras].join("\n") %>
+    <%= config[:content].join("\n") %>
     <%- config[:sites].each do |fqdn,content| %>
     <%= content %>
     <%- end %>
