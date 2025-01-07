@@ -48,7 +48,7 @@ caddy_handler 'psi.lab.acep.uaf.edu' do
   action :add
 end
 
-caddy_site '*.camio.acep.uaf.edu' do 
+caddy_site '*.camio.acep.uaf.edu' do
   dns_verification 'tls-dns'
 end
 

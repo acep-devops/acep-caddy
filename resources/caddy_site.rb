@@ -20,4 +20,3 @@ action :add do
     end
   end
 end
-
