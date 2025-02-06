@@ -1,5 +1,5 @@
 {
-  "revision_id": "fff54f29081b87425a96d051d5bfe98ee27d2e806c3b38325dedf7a2f0ca6650",
+  "revision_id": "4ba1b678e895eeac4d8900eab889bdbb374cac74969cd9dc3b034e3784c8f55a",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "f63d18e48aa31b0121956ed2539d5da9e159ea86",
-      "dotted_decimal_identifier": "69310021393621787.318400669832093.102984211622534",
+      "identifier": "3aff1f002148491f606809eb80e98ac24388186a",
+      "dotted_decimal_identifier": "16606057260468297.8831724237324521.152566961281130",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
+        "remote": "https://github.com/acep-devops/acep-caddy.git",
+        "revision": "8a325c7795bd8d25f644980f0e88cb4ac9c64a70",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/cleanup_resource_revamp"
+          "origin/main"
         ]
       },
       "source_options": {
@@ -41,14 +41,14 @@
       }
     },
     "docker": {
-      "version": "11.8.4",
-      "identifier": "b5108c407450d1242c1d89dfa851916cfc5f9c01",
-      "dotted_decimal_identifier": "50965165347459281.10181604540393553.159897276619777",
-      "cache_key": "docker-11.8.4-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.8.4/download",
+      "version": "11.9.2",
+      "identifier": "51acf14ec97149f6909eaabb4afca05aeb9f298d",
+      "dotted_decimal_identifier": "22989625522483529.69401855414455036.176312360577421",
+      "cache_key": "docker-11.9.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.8.4/download",
-        "version": "11.8.4"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
+        "version": "11.9.2"
       }
     },
     "golang": {
@@ -81,12 +81,12 @@
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "7b5086b720fed680890926ea30b3952a3ec2c212",
+        "remote": "https://github.com/acep-devops/acep-caddy.git",
+        "revision": "8a325c7795bd8d25f644980f0e88cb4ac9c64a70",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/cleanup_resource_revamp"
+          "origin/main"
         ]
       },
       "source_options": {
@@ -114,7 +114,7 @@
       ],
       [
         "docker",
-        "= 11.8.4"
+        "= 11.9.2"
       ],
       [
         "golang",
@@ -142,7 +142,7 @@
           ">= 3.1.0"
         ]
       ],
-      "docker (11.8.4)": [
+      "docker (11.9.2)": [
 
       ],
       "golang (5.4.21)": [
