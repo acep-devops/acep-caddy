@@ -44,6 +44,13 @@ action :install do
     action :create
   end
 
+  directory '/var/log/caddy' do
+    owner new_resource.user
+    group new_resource.group
+    mode '0750'
+    action :create
+  end
+
   with_run_context :root do
     service 'caddy' do
       supports status: true, restart: true, reload: true

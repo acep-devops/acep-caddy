@@ -5,6 +5,14 @@
 
 module AcepCaddy
   module CaddyHelpers
+    def default_domain_config
+      {
+        content: [],
+        sites: {},
+        log: true,
+      }
+    end
+
     def snippet_includes(items)
       items.map { |item| "import #{item}" }.join("\n")
     end
