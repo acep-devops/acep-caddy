@@ -5,7 +5,6 @@ provides :caddy_site
 
 # related to add actions
 property :dns_verification, String
-property :log, [true, false], default: true
 property :content, Array, default: []
 
 action_class do
@@ -24,7 +23,6 @@ action :add do
       variables[:domains][new_resource.name] ||= default_config
       variables[:domains][new_resource.name][:content] += new_resource.content
       variables[:domains][new_resource.name][:content].uniq!
-      variables[:domains][new_resource.name][:log] = new_resource.log
     end
   end
 end
