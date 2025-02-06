@@ -14,7 +14,7 @@ end
 action :add do
   import_verify = "import #{new_resource.dns_verification}"
   new_resource.content << import_verify
-  
+
   default_config = default_domain_config
 
   with_run_context :root do

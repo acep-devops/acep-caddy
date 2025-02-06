@@ -9,7 +9,7 @@ module AcepCaddy
       {
         content: [],
         sites: {},
-        log: true
+        log: true,
       }
     end
 
