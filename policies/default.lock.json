@@ -1,5 +1,5 @@
 {
-  "revision_id": "7e13369c2666b96d6a6832d1aa16296a847044354d06704ffdab7ba1ed40e336",
+  "revision_id": "5102a6dfcd4c68d782c6b4c17887eed457f61aea34279a3a673468469b3fc2f0",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "47d63544c0d0199ae703c567004a5eb53b7012bd",
-      "dotted_decimal_identifier": "20220247621554201.43601149796221002.104132479292093",
+      "identifier": "74b84e0c88eab41d4581bef0a87e1b5cb2700594",
+      "dotted_decimal_identifier": "32853742655695540.8239197881149566.30084944627092",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "adbe65445ed2ed16f31bb9bcb0ee9d42174a53c0",
+        "remote": "https://github.com/acep-devops/acep-caddy.git",
+        "revision": "3ffa171bf946fb312cfe2e26ab63add0883d628f",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_logging_support"
+          "origin/main"
         ]
       },
       "source_options": {
@@ -75,18 +75,18 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "40a11fa1f66455341c7b7b19e8aab7e0e4fabae1",
-      "dotted_decimal_identifier": "18191555742819413.14668015460804778.202176542194401",
+      "identifier": "c3f4ad92cf279809bcf0ef329c21daa314cc0a93",
+      "dotted_decimal_identifier": "55156646788147096.2741017781640225.240393963440787",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "adbe65445ed2ed16f31bb9bcb0ee9d42174a53c0",
+        "remote": "https://github.com/acep-devops/acep-caddy.git",
+        "revision": "3ffa171bf946fb312cfe2e26ab63add0883d628f",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_logging_support"
+          "origin/main"
         ]
       },
       "source_options": {

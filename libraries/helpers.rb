@@ -31,12 +31,13 @@ module AcepCaddy
     end
 
     def site_match(name, resource)
-      match_data = resource.match.to_a
-      match_data << "host #{resource.fqdn}" unless resource.fqdn.nil?
+      if resource.match.is_a?(String)
+        resource.match = [resource.match]
+      end
 
       <<-EOF
 @#{name} {
-  #{match_data.join("\n")}
+  #{resource.match.join("\n")}
 }
       EOF
     end

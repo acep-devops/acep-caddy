@@ -6,9 +6,8 @@ provides :caddy_handler
 # related to add actions
 property :domain, String
 property :dns_verification, String, default: 'tls-dns'
-property :fqdn, String
 property :log, [true, false], default: true
-property :match, Array, default: []
+property :match, [String, Array], default: []
 property :content, String
 property :reverse_proxy, Hash
 property :redirect, String
@@ -19,13 +18,11 @@ action_class do
 end
 
 action :add do
-  if new_resource.fqdn.nil?
-    new_resource.fqdn = new_resource.name
+  if new_resource.domain.nil?
+    new_resource.domain = new_resource.name
   end
 
-  if new_resource.domain.nil?
-    new_resource.domain = new_resource.fqdn
-  end
+  new_resource.name = new_resource.name.gsub(%r{[\*\.\/\:]}, '_')
 
   content = site(new_resource)
   default_config = default_domain_config

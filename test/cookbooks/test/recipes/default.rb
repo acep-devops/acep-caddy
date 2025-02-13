@@ -22,8 +22,8 @@ caddy_service 'caddy' do
 end
 
 caddy_handler 'hello_test' do
-  fqdn 'hello.lab.acep.uaf.edu'
-  match ['path /test']
+  domain 'http://hello.lab.acep.uaf.edu:3000'
+  match 'path /test'
   content <<-EOF
 respond "Hello test!"
     EOF
@@ -31,7 +31,7 @@ respond "Hello test!"
 end
 
 caddy_handler 'hello' do
-  fqdn 'hello.lab.acep.uaf.edu'
+  domain 'http://hello.lab.acep.uaf.edu:3000'
   content <<-EOF
 respond "Hello World!"
     EOF
@@ -52,9 +52,8 @@ caddy_site '*.camio.acep.uaf.edu' do
   dns_verification 'tls-dns'
 end
 
-caddy_handler 'foo' do
-  domain '*.camio.acep.uaf.edu'
-  fqdn 'foo.camio.acep.uaf.edu'
+caddy_handler '*.camio.acep.uaf.edu' do
+  match 'host foo.camio.acep.uaf.edu'
   content <<-EOF
     respond "Hello, Camio!"
   EOF

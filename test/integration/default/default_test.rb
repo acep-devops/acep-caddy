@@ -28,10 +28,10 @@ describe file('/etc/caddy/Caddyfile') do
   its('content') { should match /import https-insecure/ }
 end
 
-describe command('sleep 5 && curl https://hello.lab.acep.uaf.edu --connect-to hello.lab.acep.uaf.edu:443:127.0.0.1 -k') do
+describe command('sleep 5 && curl http://hello.lab.acep.uaf.edu:3000 --connect-to hello.lab.acep.uaf.edu:3000:127.0.0.1 -k') do
   its('stdout') { should match /Hello World!/ }
 end
 
-describe command('curl https://hello.lab.acep.uaf.edu/test --connect-to hello.lab.acep.uaf.edu:443:127.0.0.1 -k') do
+describe command('curl http://hello.lab.acep.uaf.edu:3000/test --connect-to hello.lab.acep.uaf.edu:3000:127.0.0.1 -k') do
   its('stdout') { should match /Hello test!/ }
 end
