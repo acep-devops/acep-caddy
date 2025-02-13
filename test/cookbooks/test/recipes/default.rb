@@ -30,8 +30,7 @@ respond "Hello test!"
   action :add
 end
 
-caddy_handler 'hello' do
-  domain 'http://hello.lab.acep.uaf.edu:3000'
+caddy_handler 'http://hello.lab.acep.uaf.edu:3000' do
   content <<-EOF
 respond "Hello World!"
     EOF

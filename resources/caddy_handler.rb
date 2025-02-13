@@ -22,7 +22,7 @@ action :add do
     new_resource.domain = new_resource.name
   end
 
-  new_resource.name = new_resource.name.gsub(%r{[\*\.\/\:]}, '_')
+  new_resource.name = new_resource.name.gsub(%r{[\*\.\/\:]+}, '_')
 
   content = site(new_resource)
   default_config = default_domain_config

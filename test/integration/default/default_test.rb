@@ -20,7 +20,7 @@ end
 
 describe file('/etc/caddy/Caddyfile') do
   it { should exist }
-  its('content') { should match /@hello {/ }
+  its('content') { should match /@http_hello_lab_acep_uaf_edu_3000 {/ }
 end
 
 describe file('/etc/caddy/Caddyfile') do
