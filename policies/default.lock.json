@@ -1,5 +1,5 @@
 {
-  "revision_id": "7e13369c2666b96d6a6832d1aa16296a847044354d06704ffdab7ba1ed40e336",
+  "revision_id": "eb1292e77ab7d7125da0feb23d7a8ad727722d1c9cfd0601447ad293757c2365",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "47d63544c0d0199ae703c567004a5eb53b7012bd",
-      "dotted_decimal_identifier": "20220247621554201.43601149796221002.104132479292093",
+      "identifier": "cb5149fd4f8a2096d3f198b16c9e3a8251917598",
+      "dotted_decimal_identifier": "57228798496573984.42454281108941982.64331388646808",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "adbe65445ed2ed16f31bb9bcb0ee9d42174a53c0",
+        "revision": "023223d942db31da10c04abd49cc18104783c64c",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_logging_support"
+          "origin/clean_up_resource_syntax"
         ]
       },
       "source_options": {
@@ -75,18 +75,18 @@
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "40a11fa1f66455341c7b7b19e8aab7e0e4fabae1",
-      "dotted_decimal_identifier": "18191555742819413.14668015460804778.202176542194401",
+      "identifier": "bbe1a1db1c63252e6d61f4ccc4032d6077b708b7",
+      "dotted_decimal_identifier": "52883905926947621.13068116415005699.49892348594359",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "adbe65445ed2ed16f31bb9bcb0ee9d42174a53c0",
+        "revision": "023223d942db31da10c04abd49cc18104783c64c",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_logging_support"
+          "origin/clean_up_resource_syntax"
         ]
       },
       "source_options": {
