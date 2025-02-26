@@ -17,11 +17,9 @@ action :create do
   build_plugins = new_resource.plugins
   build_plugins << 'github.com/caddy-dns/googleclouddns' unless build_plugins.include?('github.com/caddy-dns/googleclouddns')
 
-  apt_repository 'xcaddy' do
-    uri 'https://dl.cloudsmith.io/public/caddy/xcaddy/deb/ubuntu'
-    components ['main']
-    key 'https://dl.cloudsmith.io/public/caddy/xcaddy/gpg.key'
-    action :add
+  caddy_install 'xcaddy' do 
+    repo 'xcaddy'
+    action [:add_repo, :install]
   end
 
   # Need to install golang in order to build the custom caddy binary
@@ -34,11 +32,8 @@ action :create do
     build_cmd << plugin
   end
 
-  package %w(xcaddy) do
-    action :install
-  end
-
   execute 'xcaddy_build' do
     command "/usr/bin/bash -l -c \"#{build_cmd.join(' ')}\""
+    environment 'GOCACHE' => ::File.join(Chef::Config[:file_cache_path], 'gocache')
   end
 end
