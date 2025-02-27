@@ -17,7 +17,7 @@ action :create do
   build_plugins = new_resource.plugins
   build_plugins << 'github.com/caddy-dns/googleclouddns' unless build_plugins.include?('github.com/caddy-dns/googleclouddns')
 
-  caddy_install 'xcaddy' do 
+  caddy_install 'xcaddy' do
     repo 'xcaddy'
     action [:add_repo, :install]
   end

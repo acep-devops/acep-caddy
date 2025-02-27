@@ -6,7 +6,7 @@ provides :caddy_install
 property :repo, String, default: 'stable'
 property :package, String, name_property: true
 
-action :add_repo do 
+action :add_repo do
   apt_repository "caddy-#{new_resource.repo}" do
     uri "https://dl.cloudsmith.io/public/caddy/#{new_resource.repo}/deb/ubuntu"
     components ['main']
@@ -15,7 +15,7 @@ action :add_repo do
   end
 end
 
-action :install do 
+action :install do
   package new_resource.package do
     action :install
   end
