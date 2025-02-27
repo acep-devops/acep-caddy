@@ -5,7 +5,7 @@
 # Copyright:: 2024, The Authors, All Rights Reserved.
 include_recipe '::pebble'
 
-caddy_build 'caddy' do
+caddy_build 'xcaddy' do
 end
 
 execute 'cp /etc/pebble/certs/pebble.minica.pem /etc/ssl/certs/pebble.minica.pem'
