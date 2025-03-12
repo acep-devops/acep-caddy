@@ -22,4 +22,4 @@ Berksfile.lock
 Policyfile.lock.json
 
 .idea/
-
+.vscode/

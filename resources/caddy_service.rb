@@ -8,12 +8,10 @@ property :group, String, default: 'caddy'
 property :cookbook, String, default: 'acep-caddy'
 property :source, String, default: 'Caddyfile_resource.erb'
 
-property :acme_email, String
+property :acme_email, String, required: true
 property :acme_staging, [true, false], default: false
 property :acme_staging_url, String, default: 'https://acme-staging-v02.api.letsencrypt.org/directory'
 property :acme_ca_root, String
-property :gcp_project, String
-property :gcp_service_account_json, String
 
 action :install do
   group new_resource.group do
