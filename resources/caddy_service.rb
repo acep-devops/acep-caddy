@@ -13,6 +13,8 @@ property :acme_staging, [true, false], default: false
 property :acme_staging_url, String, default: 'https://acme-staging-v02.api.letsencrypt.org/directory'
 property :acme_ca_root, String
 
+property :log_keep, Integer, default: 5
+
 action :install do
   group new_resource.group do
     action :create
@@ -68,6 +70,7 @@ action :install do
           acme_staging: new_resource.acme_staging,
           acme_staging_url: new_resource.acme_staging_url,
           acme_ca_root: new_resource.acme_ca_root,
+          log_keep: new_resource.log_keep
       })
       action :nothing
       delayed_action :create

@@ -1,6 +1,6 @@
 ---
 driver:
-  name: vagrant
+    name: vagrant
 
 ## The forwarded_port port feature lets you connect to ports on the VM guest
 ## via localhost on the host.
@@ -10,28 +10,29 @@ driver:
 #    - ["forwarded_port", {guest: 80, host: 8080}]
 
 provisioner:
-  name: chef_zero
+    name: chef_zero
 
-  ## product_name and product_version specifies a specific Chef product and version to install.
-  ## see the Chef documentation for more details: https://docs.chef.io/workstation/config_yml_kitchen/
-  #  product_name: chef
-  #  product_version: 17
+    ## product_name and product_version specifies a specific Chef product and version to install.
+    ## see the Chef documentation for more details: https://docs.chef.io/workstation/config_yml_kitchen/
+    #  product_name: chef
+    #  product_version: 17
 
 verifier:
-  name: inspec
+    name: inspec
 
 platforms:
-  - name: ubuntu-22.04
-  - name: ubuntu-24.04
+    - name: ubuntu-22.04
+    - name: ubuntu-24.04
+    - name: ubuntu-26.04
 
 suites:
-  - name: default
-    attributes:
-      gcp:
-        project: clound-dns-321021
-      caddy:
-        sites_data_bag: test_sites
-      chef-vault:
-        databag_fallback: true
-    provisioner:
-      policyfile: ./policies/default.rb
+    - name: default
+      attributes:
+          gcp:
+              project: clound-dns-321021
+          caddy:
+              sites_data_bag: test_sites
+          chef-vault:
+              databag_fallback: true
+      provisioner:
+          policyfile: ./policies/default.rb

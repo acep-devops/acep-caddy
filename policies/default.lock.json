@@ -1,5 +1,5 @@
 {
-  "revision_id": "f4aa04faeaf825c829411da4f87cee62d240ad2bf41f14b1a9e2a911660e198d",
+  "revision_id": "38e6cb88e04f8c4010ce7d60aee1c9522b595e9d086353b7a9a42e031d612d66",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,14 +11,14 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "c664316b38e0f42ebcf2e4908211848a3c05d167",
-      "dotted_decimal_identifier": "55842208803774708.13155600331473425.145729247367527",
+      "identifier": "cacf804f9d7fa7ab3f3e9903e5e51d5e77b7ba4c",
+      "dotted_decimal_identifier": "57086095294037927.48201759105213925.32291572660812",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "4ac6b1ecd696e2af6e33f72c9ff9e4f58d0128a2",
+        "revision": "ef62565389c01cae8e620dbdb54628993d1dde91",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -30,59 +30,59 @@
       }
     },
     "ark": {
-      "version": "6.0.32",
-      "identifier": "6f0e149678d0aa3b9eded894664a62114d7c0cec",
-      "dotted_decimal_identifier": "31259204001517738.16781703579461194.107826453941484",
-      "cache_key": "ark-6.0.32-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.32/download",
+      "version": "6.0.33",
+      "identifier": "eeafb5783903b488d06186bbeeebbbce9d28663a",
+      "dotted_decimal_identifier": "67184238398079924.38509714123517675.206496074327610",
+      "cache_key": "ark-6.0.33-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.33/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.32/download",
-        "version": "6.0.32"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.33/download",
+        "version": "6.0.33"
       }
     },
     "docker": {
-      "version": "11.9.2",
-      "identifier": "51acf14ec97149f6909eaabb4afca05aeb9f298d",
-      "dotted_decimal_identifier": "22989625522483529.69401855414455036.176312360577421",
-      "cache_key": "docker-11.9.2-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
+      "version": "11.10.4",
+      "identifier": "294002399763d6b4bf3654a053f59984067e2a5c",
+      "dotted_decimal_identifier": "11610852345471958.50875735876850677.168792323664476",
+      "cache_key": "docker-11.10.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.10.4/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
-        "version": "11.9.2"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.10.4/download",
+        "version": "11.10.4"
       }
     },
     "golang": {
-      "version": "5.4.21",
-      "identifier": "1d9781d3d4268dfbadd4f790201559963ef08092",
-      "dotted_decimal_identifier": "8329358185080461.70841349352464405.98501835915410",
-      "cache_key": "golang-5.4.21-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.21/download",
+      "version": "5.4.22",
+      "identifier": "0cb59bf01af6032baf88cf8dd7997bb438bf452a",
+      "dotted_decimal_identifier": "3577381073384963.12296426131150745.136013976388906",
+      "cache_key": "golang-5.4.22-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.22/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.21/download",
-        "version": "5.4.21"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.22/download",
+        "version": "5.4.22"
       }
     },
     "seven_zip": {
-      "version": "4.2.11",
-      "identifier": "8afbffdc31b812a6d46885bdec40151ee82b3739",
-      "dotted_decimal_identifier": "39120623115548690.46958391519472704.23222488348473",
-      "cache_key": "seven_zip-4.2.11-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.11/download",
+      "version": "4.2.12",
+      "identifier": "822a7fb602d9288239027e36d98d8de2ae37c465",
+      "dotted_decimal_identifier": "36638474975238440.36654429842626957.156004725015653",
+      "cache_key": "seven_zip-4.2.12-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.12/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.11/download",
-        "version": "4.2.11"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.12/download",
+        "version": "4.2.12"
       }
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "e155532eff5444289d1da5dfbab87f9683413b47",
-      "dotted_decimal_identifier": "63425685519029316.11431749730941624.140284423912263",
+      "identifier": "cead3bbe8d8c200bb9ac74efd655ffbf14175c5d",
+      "dotted_decimal_identifier": "58174317314018336.3300375091205717.281196140911709",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "4ac6b1ecd696e2af6e33f72c9ff9e4f58d0128a2",
+        "revision": "ef62565389c01cae8e620dbdb54628993d1dde91",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -110,19 +110,19 @@
       ],
       [
         "ark",
-        "= 6.0.32"
+        "= 6.0.33"
       ],
       [
         "docker",
-        "= 11.9.2"
+        "= 11.10.4"
       ],
       [
         "golang",
-        "= 5.4.21"
+        "= 5.4.22"
       ],
       [
         "seven_zip",
-        "= 4.2.11"
+        "= 4.2.12"
       ],
       [
         "test",
@@ -136,22 +136,22 @@
           ">= 0.0.0"
         ]
       ],
-      "ark (6.0.32)": [
+      "ark (6.0.33)": [
         [
           "seven_zip",
           ">= 3.1.0"
         ]
       ],
-      "docker (11.9.2)": [
+      "docker (11.10.4)": [
 
       ],
-      "golang (5.4.21)": [
+      "golang (5.4.22)": [
         [
           "ark",
           ">= 6.0.0"
         ]
       ],
-      "seven_zip (4.2.11)": [
+      "seven_zip (4.2.12)": [
 
       ],
       "test (0.1.0)": [

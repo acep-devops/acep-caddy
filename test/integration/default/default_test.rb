@@ -26,6 +26,10 @@ end
 describe file('/etc/caddy/Caddyfile') do
   it { should exist }
   its('content') { should match /import https-insecure/ }
+  its('content') { should match /roll_keep 20/ }
+end
+
+describe file('/etc/caddy/Caddyfile') do
 end
 
 describe command('sleep 5 && curl http://hello.lab.acep.uaf.edu:3000 --connect-to hello.lab.acep.uaf.edu:3000:127.0.0.1 -k') do
