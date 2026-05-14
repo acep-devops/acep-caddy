@@ -74,7 +74,7 @@ action :install do
           acme_ca_root: new_resource.acme_ca_root,
           log_roll_size: new_resource.log_roll_size,
           log_roll_keep: new_resource.log_roll_keep,
-          log_roll_keep_for: new_resource.log_roll_keep_for
+          log_roll_keep_for: new_resource.log_roll_keep_for,
       })
       action :nothing
       delayed_action :create
