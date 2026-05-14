@@ -13,9 +13,10 @@ jobs:
             - name: Check out code
               uses: actions/checkout@v4
             - name: Install Chef
-              uses: actionshub/chef-install@2.0.4
+              uses: actionshub/chef-install@6.0.0
               with:
                   version: ${{ inputs.chef_workstation_version }}
+                  license: ${{ secrets.CHEF_LICENSE_KEY }}
             - name: Run Cookstyle
               run: chef exec cookstyle --display-cop-names --extra-details
               env:
