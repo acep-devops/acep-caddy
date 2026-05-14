@@ -18,6 +18,7 @@ jobs:
                   version: ${{ inputs.chef_workstation_version }}
                   license: ${{ secrets.CHEF_LICENSE_KEY }}
                   project: chef-workstation
+                  chefDownloadUrl: chefdownload-commercial.chef.io
             - name: Run Cookstyle
               run: chef exec cookstyle --display-cop-names --extra-details
               env:
@@ -49,6 +50,7 @@ jobs:
               with:
                   license: ${{ secrets.CHEF_LICENSE_KEY }}
                   project: chef-workstation
+                  chefDownloadUrl: chefdownload-commercial.chef.io
             - name: Test-Kitchen
               uses: actionshub/test-kitchen@main
               with:
