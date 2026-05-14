@@ -14,5 +14,3 @@ run_list ''
 
 # Specify a custom source for a single cookbook:
 cookbook 'acep-caddy', path: '.'
-
-default['golang']['version'] = '1.22.1'

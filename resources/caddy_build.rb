@@ -21,7 +21,7 @@ action :create do
   package 'xcaddy'
 
   # Need to install golang in order to build the custom caddy binary
-  include_recipe 'golang::default'
+  golang 'default'
 
   # We're building a custom binary for caddy that includes the googleclouddns
   build_cmd = ['xcaddy', 'build', '--output', '/usr/bin/caddy']

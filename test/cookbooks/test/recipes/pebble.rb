@@ -1,4 +1,6 @@
-include_recipe 'golang::default'
+golang 'default' do
+end
+
 execute 'go install github.com/jsha/minica@latest' do
   env 'PATH' => "/usr/local/go/bin:#{ENV['PATH']}"
 end
