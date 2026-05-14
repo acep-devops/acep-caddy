@@ -14,9 +14,9 @@
 (subdomain-log) {
     log {
         output file /var/log/caddy/access-{args[0]}.log {
-            roll_size 1gb
-            roll_keep <%= @log_keep %>
-            roll_keep_for 2160h
+            roll_size <%= @log_roll_size %>
+            roll_keep <%= @log_roll_keep %>
+            roll_keep_for <%= @log_roll_keep_for %>
         }
     }
 }
