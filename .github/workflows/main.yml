@@ -44,6 +44,8 @@ jobs:
               uses: actions/checkout@main
             - name: Install Chef
               uses: actionshub/chef-install@2.0.4
+              with:
+                  license: ${{ secrets.CHEF_LICENSE_KEY }}
             - name: Test-Kitchen
               uses: actionshub/test-kitchen@main
               with:
