@@ -17,4 +17,4 @@ chef_version '>= 16.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/acep-caddy'
-depends 'golang'
+depends 'golang', '~> 7.0.0'

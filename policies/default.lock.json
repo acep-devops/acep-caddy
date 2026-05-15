@@ -1,5 +1,5 @@
 {
-  "revision_id": "67448d4d13be84069898540a52b18736a5b8f9e6f7b33cb4a105d853433f493a",
+  "revision_id": "3d5a84e806d753d3bded19ae3fe3a6509fd306c3aa905b47eba2081ca8a7ba54",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "0dfc042d9af10118c33ecc20547d935080408d35",
-      "dotted_decimal_identifier": "3936269572436225.6970073921115261.161973958380853",
+      "identifier": "ef9330c9fbcc58b8b7541801c4b95dceac8ecdde",
+      "dotted_decimal_identifier": "67434357190282328.51992967522665657.103142239686110",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "e1814272759bdfe96c02ddca7a63004ff0e52202",
+        "revision": "738e6d77381afbe173842a2609a2160f7a8eb93c",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_confirmation_for_logs"
+          "origin/main"
         ]
       },
       "source_options": {
@@ -60,11 +60,11 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "e1814272759bdfe96c02ddca7a63004ff0e52202",
+        "revision": "738e6d77381afbe173842a2609a2160f7a8eb93c",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/will/add_confirmation_for_logs"
+          "origin/main"
         ]
       },
       "source_options": {
@@ -103,7 +103,7 @@
       "acep-caddy (2.1.0)": [
         [
           "golang",
-          ">= 0.0.0"
+          "~> 7.0.0"
         ]
       ],
       "docker (11.10.4)": [
