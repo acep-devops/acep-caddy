@@ -1,5 +1,5 @@
 {
-  "revision_id": "f4aa04faeaf825c829411da4f87cee62d240ad2bf41f14b1a9e2a911660e198d",
+  "revision_id": "67448d4d13be84069898540a52b18736a5b8f9e6f7b33cb4a105d853433f493a",
   "name": "acep-caddy",
   "run_list": [
     "recipe[test::default]",
@@ -11,82 +11,60 @@
   "cookbook_locks": {
     "acep-caddy": {
       "version": "2.1.0",
-      "identifier": "c664316b38e0f42ebcf2e4908211848a3c05d167",
-      "dotted_decimal_identifier": "55842208803774708.13155600331473425.145729247367527",
+      "identifier": "0dfc042d9af10118c33ecc20547d935080408d35",
+      "dotted_decimal_identifier": "3936269572436225.6970073921115261.161973958380853",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "4ac6b1ecd696e2af6e33f72c9ff9e4f58d0128a2",
+        "revision": "e1814272759bdfe96c02ddca7a63004ff0e52202",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/main"
+          "origin/will/add_confirmation_for_logs"
         ]
       },
       "source_options": {
         "path": ".."
       }
     },
-    "ark": {
-      "version": "6.0.32",
-      "identifier": "6f0e149678d0aa3b9eded894664a62114d7c0cec",
-      "dotted_decimal_identifier": "31259204001517738.16781703579461194.107826453941484",
-      "cache_key": "ark-6.0.32-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.32/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ark/versions/6.0.32/download",
-        "version": "6.0.32"
-      }
-    },
     "docker": {
-      "version": "11.9.2",
-      "identifier": "51acf14ec97149f6909eaabb4afca05aeb9f298d",
-      "dotted_decimal_identifier": "22989625522483529.69401855414455036.176312360577421",
-      "cache_key": "docker-11.9.2-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
+      "version": "11.10.4",
+      "identifier": "294002399763d6b4bf3654a053f59984067e2a5c",
+      "dotted_decimal_identifier": "11610852345471958.50875735876850677.168792323664476",
+      "cache_key": "docker-11.10.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.10.4/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.9.2/download",
-        "version": "11.9.2"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/11.10.4/download",
+        "version": "11.10.4"
       }
     },
     "golang": {
-      "version": "5.4.21",
-      "identifier": "1d9781d3d4268dfbadd4f790201559963ef08092",
-      "dotted_decimal_identifier": "8329358185080461.70841349352464405.98501835915410",
-      "cache_key": "golang-5.4.21-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.21/download",
+      "version": "7.0.0",
+      "identifier": "19e141e6e567a8e9ef3f890c9382674a52c5452d",
+      "dotted_decimal_identifier": "7284547580684200.65846725734863746.113568913900845",
+      "cache_key": "golang-7.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/7.0.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/5.4.21/download",
-        "version": "5.4.21"
-      }
-    },
-    "seven_zip": {
-      "version": "4.2.11",
-      "identifier": "8afbffdc31b812a6d46885bdec40151ee82b3739",
-      "dotted_decimal_identifier": "39120623115548690.46958391519472704.23222488348473",
-      "cache_key": "seven_zip-4.2.11-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.11/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/seven_zip/versions/4.2.11/download",
-        "version": "4.2.11"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/golang/versions/7.0.0/download",
+        "version": "7.0.0"
       }
     },
     "test": {
       "version": "0.1.0",
-      "identifier": "e155532eff5444289d1da5dfbab87f9683413b47",
-      "dotted_decimal_identifier": "63425685519029316.11431749730941624.140284423912263",
+      "identifier": "0b9c8a410fae648a9820800a69ad51dd5e506c56",
+      "dotted_decimal_identifier": "3268342354783844.39010812140612013.90011211951190",
       "source": "../test/cookbooks/test",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/acep-devops/acep-caddy.git",
-        "revision": "4ac6b1ecd696e2af6e33f72c9ff9e4f58d0128a2",
+        "revision": "e1814272759bdfe96c02ddca7a63004ff0e52202",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/main"
+          "origin/will/add_confirmation_for_logs"
         ]
       },
       "source_options": {
@@ -109,20 +87,12 @@
         ">= 0.0.0"
       ],
       [
-        "ark",
-        "= 6.0.32"
-      ],
-      [
         "docker",
-        "= 11.9.2"
+        "= 11.10.4"
       ],
       [
         "golang",
-        "= 5.4.21"
-      ],
-      [
-        "seven_zip",
-        "= 4.2.11"
+        "= 7.0.0"
       ],
       [
         "test",
@@ -136,22 +106,10 @@
           ">= 0.0.0"
         ]
       ],
-      "ark (6.0.32)": [
-        [
-          "seven_zip",
-          ">= 3.1.0"
-        ]
-      ],
-      "docker (11.9.2)": [
+      "docker (11.10.4)": [
 
       ],
-      "golang (5.4.21)": [
-        [
-          "ark",
-          ">= 6.0.0"
-        ]
-      ],
-      "seven_zip (4.2.11)": [
+      "golang (7.0.0)": [
 
       ],
       "test (0.1.0)": [

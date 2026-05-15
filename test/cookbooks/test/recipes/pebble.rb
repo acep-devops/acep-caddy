@@ -1,10 +1,13 @@
-include_recipe 'golang::default'
+golang 'default' do
+end
+
 execute 'go install github.com/jsha/minica@latest' do
   env 'PATH' => "/usr/local/go/bin:#{ENV['PATH']}"
 end
 
 docker_installation 'default'
 docker_service 'default' do
+  storage_driver 'vfs'
   action [:create, :start]
 end
 
@@ -66,6 +69,7 @@ docker_container 'pebble' do
     '14000:14000',
     '15000:15000',
   ]
+
   command '-config /test/config.json'
   volumes [
     '/etc/pebble:/test',
